@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
 
-<h3>List of registered users:</h3>
+<h3 class="form-control">List of registered users:</h3>
 
 <th:block th:each="user : ${users}">
     <p><a th:href="@{user/detail/{id} (id = ${user.id})}" th:text="${user.userName}"></a></p>

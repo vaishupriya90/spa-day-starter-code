@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-</head>
+
+<head th:replace="fragments :: head"></head>
+
 <body>
-<h3 th:text="'User Name: ' + ${user.userName}"></h3>
-<h3 th:text="'Email: ' + ${user.email}"></h3>
-<h3 th:text="'Registered Date: ' + ${user.date}"></h3>
+<h3 th:text="'User Name: ' + ${user.userName}" class="form-control"></h3>
+<h3 th:text="'Email: ' + ${user.email}" class="form-control"></h3>
+<h3 th:text="'Registered Date: ' + ${user.date}" class="form-control"></h3>
 
 </body>
 </html>

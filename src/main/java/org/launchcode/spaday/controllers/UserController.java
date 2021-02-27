@@ -16,6 +16,7 @@ public class UserController {
     public String displayAllUsers(Model model){
         List<User> users = UserData.getAll();
         model.addAttribute("users",users);
+        model.addAttribute("title","Registered Users");
         return "user/index";
 
     }
@@ -23,11 +24,13 @@ public class UserController {
     public String displayUserDetail(@PathVariable int id,Model model){
         User user = UserData.getById(id);
         model.addAttribute("user",user);
+        model.addAttribute("title","User Details");
         return "user/userDetail";
     }
 
     @GetMapping("add")
-    public String displayAddUserForm(){
+    public String displayAddUserForm(Model model){
+        model.addAttribute("title","User Registration Form");
         return "user/add";
     }
 
